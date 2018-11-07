@@ -1,14 +1,22 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'maven'
 
-group = 'com.github.jitpack'
+group = 'com.github.johansonck'
 
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
-
-repositories {
-  mavenCentral()
-}
 
 dependencies {
   compile 'com.google.guava:guava:18.0'
