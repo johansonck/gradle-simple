@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
     compile 'com.google.guava:guava:18.0'
-    compile 'org.springframework.boot:spring-boot-starter:2.0.6.RELEASE'
+//    compile 'org.springframework.boot:spring-boot-starter:2.0.6.RELEASE'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
