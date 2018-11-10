@@ -22,7 +22,7 @@ targetCompatibility = 1.8
 
 dependencies {
   compile 'com.google.guava:guava:19.0'
-  compile 'org.springframework.boot:spring-boot-starter'
+  compile 'org.springframework.boot:spring-boot-starter:2.0.6.RELEASE'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
