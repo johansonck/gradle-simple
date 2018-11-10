@@ -12,17 +12,21 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'maven'
-//apply plugin: 'org.springframework.boot'
-//apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group = 'com.github.johansonck'
 
-sourceCompatibility = 1.8 // java 8
+sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
-  compile 'com.google.guava:guava:19.0'
-//  compile 'org.springframework.boot:spring-boot-starter:2.0.6.RELEASE'
+    compile 'com.google.guava:guava:19.0'
+    compile 'org.springframework.boot:spring-boot-starter:2.0.6.RELEASE'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
@@ -38,19 +42,4 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 artifacts {
     archives sourcesJar
     archives javadocJar
-}
-
-// To specify a license in the pom:
-install {
-  repositories.mavenInstaller {
-    pom.project {
-      licenses {
-        license {
-          name 'The Apache Software License, Version 2.0'
-          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-          distribution 'repo'
-        }
-      }
-    }
-  }
 }
